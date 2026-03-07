@@ -19,10 +19,16 @@ Uses [uv](https://docs.astral.sh/uv/) and [just](https://just.systems/):
 just
 
 # Run all tests
-just run
+just test
 
-# Run tests for a specific problem (e.g., lc_146_lru → test/test_lc_146_lru.py)
-just run lc_146_lru
+# Run tests for a specific problem (e.g., lc_146_lru -> test/test_lc_146_lru.py)
+just test lc_146_lru
+
+# Lint the repo
+just lint
+
+# Auto-fix and format the repo
+just format
 ```
 
-First-time setup: `uv sync` (installs pytest as dev dependency).
+First-time setup: `uv sync` (installs pytest and ruff as dev dependencies).

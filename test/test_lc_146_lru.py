@@ -28,7 +28,7 @@ def test_update_moves_to_mru():
     cache.put(1, 1)
     cache.put(2, 2)
     cache.put(1, 10)  # update moves 1 to MRU
-    cache.put(3, 3)   # evicts 2, not 1
+    cache.put(3, 3)  # evicts 2, not 1
     assert cache.get(1) == 10
     assert cache.get(2) == -1
     assert cache.get(3) == 3

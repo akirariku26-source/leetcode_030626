@@ -1,5 +1,4 @@
 from collections import defaultdict
-from typing import List
 
 
 class UnionFind:
@@ -17,7 +16,7 @@ class UnionFind:
         if self.parent[x] != x:
             self.parent[x] = self.find(self.parent[x])
         return self.parent[x]
-    
+
     def union(self, x: str, y: str) -> None:
         """Merge the sets containing x and y."""
         root_x = self.find(x)
@@ -32,8 +31,9 @@ class UnionFind:
             self.parent[root_y] = root_x
             self.rank[root_x] += 1
 
+
 class Solution:
-    def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
+    def accountsMerge(self, accounts: list[list[str]]) -> list[list[str]]:
         """Merge accounts that share at least one email address."""
         uf = UnionFind()
         email_to_name: dict[str, str] = {}
@@ -49,4 +49,7 @@ class Solution:
             root = uf.find(email)
             root_to_emails[root].append(email)
 
-        return [[email_to_name[root]] + sorted(emails) for root, emails in root_to_emails.items()]
+        return [
+            [email_to_name[root]] + sorted(emails)
+            for root, emails in root_to_emails.items()
+        ]

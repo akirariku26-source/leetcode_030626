@@ -42,7 +42,9 @@ def test_accounts_merge_multiple_accounts_same_person():
     ]
 
     result = solution.accountsMerge(accounts)
-    expected = [["Gabe", "gabe0@m.co", "gabe1@m.co", "gabe2@m.co", "gabe3@m.co", "gabe4@m.co"]]
+    expected = [
+        ["Gabe", "gabe0@m.co", "gabe1@m.co", "gabe2@m.co", "gabe3@m.co", "gabe4@m.co"]
+    ]
 
     assert normalize(result) == normalize(expected)
 
